@@ -84,7 +84,7 @@ variable "recovery_mechanism_name" {
 
 variable "recovery_mechanism_priority" {
   type = number
-  description = "Priority for the recovery mechanisms defined
+  description = "Priority for the recovery mechanisms defined"
   default = 1
 }
 
