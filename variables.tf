@@ -49,9 +49,9 @@ variable "tags" {
 }
 
 variable "identity_token_expiration" {
-  type = number
+  type        = number
   description = "Duration in minutes for the primary identity tokens (id_token and access_token) to remain valid"
-  default = 60
+  default     = 60
 }
 
 variable "aws_region" {
@@ -66,91 +66,91 @@ variable "ses_identity_arn" {
 }
 
 variable "from_email_address" {
-    type = string
-    description = "No-reply address for system emails"
+  type        = string
+  description = "No-reply address for system emails"
 }
 
 variable "email_sending_account" {
-    type = string
-    description = "Account for sending system emails"
-    default = "DEVELOPER"
+  type        = string
+  description = "Account for sending system emails"
+  default     = "DEVELOPER"
 }
 
 variable "recovery_mechanism_name" {
-  type = string
+  type        = string
   description = "Name of recovery method for an account"
-  default = "verified_email"
+  default     = "verified_email"
 }
 
 variable "recovery_mechanism_priority" {
-  type = number
+  type        = number
   description = "Priority for the recovery mechanisms defined"
-  default = 1
+  default     = 1
 }
 
 variable "allow_admin_create_user_only" {
-  type = bool
+  type        = bool
   description = "Only admin users can create new users?"
-  default = true
+  default     = true
 }
 
 variable "invite_message_template_file_path" {
-  type = string
+  type        = string
   description = "Path to email template file for inviting new users"
 }
 
 variable "invite_message_subject" {
-  type = string
+  type        = string
   description = "Subject line for invitation email"
 }
 
 variable "invite_sms_message" {
-  type = string
+  type        = string
   description = "Text for invitation SMS message"
 }
 
 variable "password_minimum_length" {
-  type = number
+  type        = number
   description = "Minimum number of characters for passwords"
-  default = 8
+  default     = 8
 }
 
 variable "password_require_lowercase" {
-  type = bool
+  type        = bool
   description = "Passwords require lowercase characters"
-  default = true
+  default     = true
 }
 
 variable "password_require_uppercase" {
-  type = bool
+  type        = bool
   description = "Passwords require uppercase characters"
-  default = true
+  default     = true
 }
 
 variable "password_require_numbers" {
-  type = bool
+  type        = bool
   description = "Passwords require numerical characters"
-  default = true
+  default     = true
 }
 
 variable "password_require_symbols" {
-  type = bool
+  type        = bool
   description = "Passwords require symbols"
-  default = true
+  default     = true
 }
 
 variable "temporary_password_validity_days" {
-  type = number
+  type        = number
   description = "Number of days a temporary password remains valid"
-  default = 30
+  default     = 30
 }
 
 variable "ui_customization_logo" {
-  type = string
+  type        = string
   description = "Path to image file for Cognito user pool UI customization"
 }
 
 variable "ui_customization_css" {
-  type = string
-  description = "CSS file string for Cognito user pool UI customization" 
+  type        = string
+  description = "CSS file string for Cognito user pool UI customization"
 }

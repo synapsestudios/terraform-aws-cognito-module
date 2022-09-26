@@ -1,5 +1,5 @@
 provider "aws" {
-    region = var.aws_region
+  region = var.aws_region
 }
 
 resource "aws_cognito_user_pool" "private_user_pool" {
@@ -27,16 +27,16 @@ resource "aws_cognito_user_pool" "private_user_pool" {
     invite_message_template {
       email_message = file(var.invite_message_template_file_path)
       email_subject = var.invite_message_subject
-      sms_message = var.invite_sms_message
+      sms_message   = var.invite_sms_message
     }
   }
 
   password_policy {
-    minimum_length = var.password_minimum_length
-    require_lowercase = var.password_require_lowercase
-    require_numbers = var.password_require_numbers
-    require_symbols = var.password_require_symbols
-    require_uppercase = var.password_require_uppercase
+    minimum_length                   = var.password_minimum_length
+    require_lowercase                = var.password_require_lowercase
+    require_numbers                  = var.password_require_numbers
+    require_symbols                  = var.password_require_symbols
+    require_uppercase                = var.password_require_uppercase
     temporary_password_validity_days = var.temporary_password_validity_days
   }
 
@@ -59,7 +59,7 @@ resource "aws_cognito_user_pool_client" "admin_client" {
   access_token_validity                = var.identity_token_expiration
 
   token_validity_units {
-    id_token = "minutes"
+    id_token     = "minutes"
     access_token = "minutes"
   }
 
@@ -105,7 +105,7 @@ resource "aws_cognito_user_pool_client" "public_client" {
   access_token_validity                = var.identity_token_expiration
 
   token_validity_units {
-    id_token = "minutes"
+    id_token     = "minutes"
     access_token = "minutes"
   }
 
@@ -117,9 +117,9 @@ resource "aws_cognito_user_pool_client" "public_client" {
 }
 
 resource "aws_cognito_user_pool_ui_customization" "custom_css" {
-  client_id = aws_cognito_user_pool_client.admin_client.id
+  client_id    = aws_cognito_user_pool_client.admin_client.id
   user_pool_id = aws_cognito_user_pool_domain.domain.user_pool_id
-  image_file = filebase64(var.ui_customization_logo)
-  css = var.ui_customization_css
+  image_file   = filebase64(var.ui_customization_logo)
+  css          = var.ui_customization_css
 }
 
